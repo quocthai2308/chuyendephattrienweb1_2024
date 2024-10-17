@@ -1,0 +1,99 @@
+@background-title: #343a40;
+@text-color: #fff;
+@padding-text-color: 10px;
+@text-order: #dc3545;
+@font-size-small: 0.875rem;
+@background-color-column: #fff;
+@background-color: #f8f9fa;
+@background-shadow: #0000002d;
+@padding-column: 1rem;
+@border-radius-column: .25rem;
+@padding-type-3038: 2rem;
+@padding-th-td: .5rem;
+@border-th-td: #dee2e6;
+@fw-bold: 100;
+@min-height-column: 350px;
+@padding-text-color: 10px;
+@margin-bottom-column: 1rem;
+@padding-table-device: 1rem;
+@grid-gap-table-device: .5rem;
+
+.type-3038 {
+    display: flex;
+    flex-direction: column;
+    padding: @padding-type-3038;
+
+    .bg-title {
+        background-color: @background-title;
+    }
+
+    .text-color {
+        color: @text-color;
+        padding: @padding-text-color;
+    }
+
+    .bg-light {
+        background-color: @background-color;
+    }
+
+    .shadow-lg {
+        box-shadow: 0 1rem 3rem @background-shadow;
+    }
+
+    .table {
+        border-collapse: collapse;
+
+        th,
+        td {
+            border: 1px solid @border-th-td;
+            padding: @padding-th-td;
+            text-align: left;
+        }
+
+        .text-order {
+            text-decoration: none;
+            color: @text-order;
+        }
+    }
+
+    .list-style {
+        list-style-type: none;
+    }
+
+    .small {
+        font-size: @font-size-small;
+    }
+
+    .fw-bold {
+        font-weight: @fw-bold;
+    }
+
+    .table-device {
+        display: grid;
+        grid-template-columns: 1fr 1fr 2fr; 
+        grid-gap: @grid-gap-table-device; 
+        padding: @padding-table-device;
+        box-sizing: border-box;
+
+        .column {
+            background-color: @background-color-column;
+            padding: @padding-column;
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+            border-radius: @border-radius-column;
+            min-height: @min-height-column; 
+            display: flex;
+            flex-direction: column; 
+        }
+    }
+
+    @media (max-width: 768px) {
+        .table-device {
+            grid-template-columns: 1fr; 
+        }
+
+        .column {
+            min-height: auto; 
+            margin-bottom: @margin-bottom-column; 
+        }
+    }
+}
